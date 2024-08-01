@@ -1,7 +1,6 @@
 from django.db import models
 
 from django.contrib.auth.models import AbstractUser
-
 from ckeditor.fields import RichTextField
 
 from apps.common.models import BaseModel

@@ -36,6 +36,7 @@ def travel(request):
     page_number = request.GET.get('page')
 
     blogs = Blog.objects.filter(category__name="Travel").order_by('?')
+
     popular_blogs = Blog.objects.all().order_by('-id')[:3]
 
     paginator = Paginator(blogs, 5)
@@ -54,6 +55,7 @@ def fashion(request):
     tag = request.GET.get('tag')
 
     blogs = Blog.objects.filter(category__name="Fashion").order_by('?')[:12]
+    
     popular_blogs = Blog.objects.all().order_by('-id')[:3]
 
     context = {

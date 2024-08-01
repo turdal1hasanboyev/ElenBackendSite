@@ -14,7 +14,6 @@ from pathlib import Path
 import environ
 import os
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,12 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'ckeditor',
+
     'apps.common',
     'apps.user',
     'apps.elen',
     'apps.get_in_touch',
-
-    'ckeditor',
 ]
 
 MIDDLEWARE = [

@@ -1,8 +1,8 @@
 from django.db import models
 
-from apps.common.models import BaseModel
-
 from ckeditor.fields import RichTextField
+
+from apps.common.models import BaseModel
 
 
 class GetInTouch(BaseModel):
