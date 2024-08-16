@@ -8,27 +8,19 @@ from django.core.paginator import Paginator
 def home(request):
     cat = request.GET.get('cat')
 
-    blogs = Blog.objects.all().order_by('?')[:12]
+    blogs = Blog.objects.all()
 
     if cat:
         blogs = blogs.filter(category__name=cat)
 
-    context = {
-        'blogs': blogs,
-    }
-
-    return render(request, 'index.html', context)
+    return render(request, 'index.html', {'blogs': blogs.order_by('?')[:12]})
 
 def photography(request):
     cat = request.GET.get('cat')
 
-    blogs = Blog.objects.filter(category__name="Photography").order_by('?')[:12]
-
-    context = {
-        'blogs': blogs,
-        }
+    blogs = Blog.objects.filter(category__name="Photography")
     
-    return render(request, 'photography.html', context)
+    return render(request, 'photography.html', {'blogs': blogs.order_by('?')[:12]})
 
 def travel(request):
     cat = request.GET.get('cat')
@@ -37,7 +29,7 @@ def travel(request):
 
     blogs = Blog.objects.filter(category__name="Travel").order_by('?')
 
-    popular_blogs = Blog.objects.all().order_by('-id')[:3]
+    popular_blogs = Blog.objects.all()
 
     paginator = Paginator(blogs, 5)
     selected_page = paginator.get_page(page_number)
@@ -45,7 +37,7 @@ def travel(request):
 
     context = {
         'blogs': selected_page,
-        'popular_blogs': popular_blogs,
+        'popular_blogs': popular_blogs.order_by('-id')[:3],
     }
 
     return render(request, 'travel.html', context)
@@ -54,13 +46,13 @@ def fashion(request):
     cat = request.GET.get('cat')
     tag = request.GET.get('tag')
 
-    blogs = Blog.objects.filter(category__name="Fashion").order_by('?')[:12]
+    blogs = Blog.objects.filter(category__name="Fashion")
     
-    popular_blogs = Blog.objects.all().order_by('-id')[:3]
+    popular_blogs = Blog.objects.all()
 
     context = {
-        'blogs': blogs,
-        'popular_blogs': popular_blogs,
+        'blogs': blogs.order_by('?')[:12],
+        'popular_blogs': popular_blogs.order_by('-id')[:3],
     }
 
     return render(request, 'fashion.html', context)

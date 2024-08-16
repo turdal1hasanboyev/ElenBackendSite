@@ -5,4 +5,5 @@ django-js-asset==2.2.0
 pillow==10.4.0
 python-environ==0.4.54
 sqlparse==0.5.1
+typing_extensions==4.11.0
 tzdata==2024.1
