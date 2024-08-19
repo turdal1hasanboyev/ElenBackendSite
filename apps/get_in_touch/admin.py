@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.get_in_touch.models import GetInTouch
+from .models import GetInTouch
 
 
 @admin.register(GetInTouch)

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from apps.user.models import User
+from .models import User
 
 
 def about(request):

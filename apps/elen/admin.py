@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.elen.models import Tag, Category, Blog
+from .models import Tag, Category, Blog
 
 
 @admin.register(Tag)

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from apps.get_in_touch.models import GetInTouch
+from .models import GetInTouch
 
 
 def get_in_touch(request):

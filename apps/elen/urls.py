@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.elen.views import home, photography, fashion, travel
+from .views import home, photography, fashion, travel
 
 
 urlpatterns = [

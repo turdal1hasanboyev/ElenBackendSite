@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.get_in_touch.views import get_in_touch
+from .views import get_in_touch
 
 
 urlpatterns = [

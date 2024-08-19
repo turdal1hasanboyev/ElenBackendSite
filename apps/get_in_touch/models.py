@@ -11,6 +11,6 @@ class GetInTouch(BaseModel):
     message = RichTextField(null=True, blank=True)
     subject = models.CharField(max_length=225, null=True, blank=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.id} - {self.name}"
     

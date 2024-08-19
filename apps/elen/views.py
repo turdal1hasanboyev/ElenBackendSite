@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from apps.elen.models import Blog
+from .models import Blog
 
 from django.core.paginator import Paginator
 

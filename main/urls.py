@@ -24,8 +24,6 @@ from django.views.static import serve
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('ckeditor/', include('ckeditor_uploader.urls')),
-
     path('', include('apps.elen.urls')),
     path('', include('apps.user.urls')),
     path('', include('apps.get_in_touch.urls')),
